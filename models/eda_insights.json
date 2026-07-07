@@ -1,0 +1,127 @@
+{
+    "overall": {
+        "total_customers": 7043,
+        "churn_rate": 0.2653698707936959,
+        "total_revenue_loss": 139130.85
+    },
+    "categorical_churn": {
+        "Contract": {
+            "Month-to-month": {
+                "churn_rate": 0.4270967741935484,
+                "count": 3875
+            },
+            "One year": {
+                "churn_rate": 0.11269517990495587,
+                "count": 1473
+            },
+            "Two year": {
+                "churn_rate": 0.02831858407079646,
+                "count": 1695
+            }
+        },
+        "InternetService": {
+            "DSL": {
+                "churn_rate": 0.1895910780669145,
+                "count": 2421
+            },
+            "Fiber optic": {
+                "churn_rate": 0.4189276485788114,
+                "count": 3096
+            },
+            "No": {
+                "churn_rate": 0.07404980340760157,
+                "count": 1526
+            }
+        },
+        "PaymentMethod": {
+            "Bank transfer (automatic)": {
+                "churn_rate": 0.16709844559585493,
+                "count": 1544
+            },
+            "Credit card (automatic)": {
+                "churn_rate": 0.15243101182654403,
+                "count": 1522
+            },
+            "Electronic check": {
+                "churn_rate": 0.4528541226215645,
+                "count": 2365
+            },
+            "Mailed check": {
+                "churn_rate": 0.19106699751861042,
+                "count": 1612
+            }
+        },
+        "TechSupport": {
+            "No": {
+                "churn_rate": 0.4163547365390153,
+                "count": 3473
+            },
+            "No internet service": {
+                "churn_rate": 0.07404980340760157,
+                "count": 1526
+            },
+            "Yes": {
+                "churn_rate": 0.15166340508806261,
+                "count": 2044
+            }
+        },
+        "OnlineSecurity": {
+            "No": {
+                "churn_rate": 0.4176672384219554,
+                "count": 3498
+            },
+            "No internet service": {
+                "churn_rate": 0.07404980340760157,
+                "count": 1526
+            },
+            "Yes": {
+                "churn_rate": 0.14611193660227836,
+                "count": 2019
+            }
+        },
+        "PaperlessBilling": {
+            "No": {
+                "churn_rate": 0.1633008356545961,
+                "count": 2872
+            },
+            "Yes": {
+                "churn_rate": 0.33565092304003835,
+                "count": 4171
+            }
+        }
+    },
+    "tenure_churn": {
+        "0-6 months": {
+            "churn_rate": 0.5293720459149224,
+            "count": 1481
+        },
+        "6-12 months": {
+            "churn_rate": 0.3588652482269504,
+            "count": 705
+        },
+        "1-2 years": {
+            "churn_rate": 0.287109375,
+            "count": 1024
+        },
+        "2-3 years": {
+            "churn_rate": 0.21634615384615385,
+            "count": 832
+        },
+        "3-4 years": {
+            "churn_rate": 0.19028871391076116,
+            "count": 762
+        },
+        "4-5 years": {
+            "churn_rate": 0.14423076923076922,
+            "count": 832
+        },
+        "5-6 years": {
+            "churn_rate": 0.06609808102345416,
+            "count": 1407
+        }
+    },
+    "monthly_charges": {
+        "churn_mean": 74.44133226324237,
+        "non_churn_mean": 61.26512369540008
+    }
+}
