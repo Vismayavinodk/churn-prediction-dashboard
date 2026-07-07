@@ -7,14 +7,13 @@ def run_eda(data_path, output_path):
     df = pd.read_csv(data_path)
     
     # 1. Data Cleaning
-    # Clean TotalCharges: replace spaces with NaN, fill with 0
     df['TotalCharges'] = df['TotalCharges'].replace(' ', '0.0')
     df['TotalCharges'] = pd.to_numeric(df['TotalCharges'])
     
     # Clean SeniorCitizen
     df['SeniorCitizen'] = df['SeniorCitizen'].map({0: 'No', 1: 'Yes'})
     
-    # Convert Churn to binary numeric for correlation/aggregation
+    # Convert Churn to binary numeric
     df['ChurnBinary'] = df['Churn'].map({'Yes': 1, 'No': 0})
     
     insights = {}
@@ -38,8 +37,7 @@ def run_eda(data_path, output_path):
     
     insights['categorical_churn'] = {}
     for col in cat_columns:
-        # Group by column and get churn rate and count
-        grouped = df.groupby(col)['ChurnBinary'].agg(['mean', 'count'])
+        grouped = df.groupby(col)['ChurnBinary'].agg(['mean', 'count']) #Group by column and get churn rate and count
         insights['categorical_churn'][col] = {
             category: {
                 'churn_rate': float(row['mean']),
@@ -48,8 +46,7 @@ def run_eda(data_path, output_path):
             for category, row in grouped.iterrows()
         }
         
-    # 4. Tenure Binning Churn Rates
-    # Bin tenure into years or 6-month blocks
+    # 4. Tenure Binning Churn Rates ( years or 6-month blocks )
     df['TenureGroup'] = pd.cut(
         df['tenure'], 
         bins=[-1, 6, 12, 24, 36, 48, 60, 72],
@@ -75,7 +72,6 @@ def run_eda(data_path, output_path):
     # Ensure output directory exists
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     
-    # Save to JSON
     with open(output_path, 'w') as f:
         json.dump(insights, f, indent=4)
         
